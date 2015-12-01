@@ -21,12 +21,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 let factionRoutes = require('./routes/factionRoutes');
+let characterRoutes = require('./routes/characterRoutes');
 
 app.get('/', function(req, res) {
 	res.render('index');
 });
 
 app.use('/api/v1/factions', factionRoutes);
+app.use('/api/v1/characters', characterRoutes);
 
 module.exports = app.listen(port, () => {
 	console.log('Example app listening at http://localhost:' + port);
