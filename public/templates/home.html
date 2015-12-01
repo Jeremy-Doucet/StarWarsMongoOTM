@@ -1,1 +1,8 @@
-<h1>{{vm.title}}</h1>
+<md-card>
+  <div layout="column" layout-fill ng-repeat="f in vm.factions" ui-sref="FactionDetails({id: f._id})">
+    <md-toolbar layout layout-align="center">
+      <h4>{{f.name}}</h4>
+    </md-toolbar>
+    <h4>{{f.diplomacy}}</h4>
+  </div>
+</md-card>

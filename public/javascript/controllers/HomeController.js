@@ -3,8 +3,11 @@
 	angular.module('app')
 	.controller('HomeController', HomeController);
 
-	function HomeController() {
+	function HomeController(FactionFactory) {
 		var vm = this;
-		vm.title = 'Welcome to our App!';
+
+		FactionFactory.getAllFactions().then(function(res) {
+			vm.factions = res;
+		});
 	}
 })();

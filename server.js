@@ -20,9 +20,13 @@ app.set('view options', {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+let factionRoutes = require('./routes/factionRoutes');
+
 app.get('/', function(req, res) {
 	res.render('index');
 });
+
+app.use('/api/v1/factions', factionRoutes);
 
 module.exports = app.listen(port, () => {
 	console.log('Example app listening at http://localhost:' + port);
