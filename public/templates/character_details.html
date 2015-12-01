@@ -1,0 +1,30 @@
+<md-card layout-padding>
+  <div layout-padding layout layout-align="center">
+    <h1>{{vm.character.name}}</h1>
+  </div>
+  <md-divider/>
+  <br/>
+  <p layout-padding>
+    <i>Age: </i> {{vm.character.age}}
+    <br>
+    <br>
+    <i>Race: </i> {{vm.character.race}}
+    <br>
+    <br>
+    <i>Jedi?: </i> {{vm.character.isJedi}}
+    <br>
+    <br>
+    <i>Homeworld: </i> {{vm.character.homeworld}}
+    <br>
+    <br>
+    <i>Biography: </i> {{vm.character.biography}}
+    <br>
+  </p>
+</md-card>
+<md-toolbar layout>
+  <md-button>Edit</md-button>
+  <span flex></span>
+  <div layout layout-align="center">
+    <md-button>Create Character</md-button>
+  </div>
+</md-toolbar>

@@ -30,6 +30,11 @@
 			templateUrl: '/templates/character_create.html',
 			controller: 'CharacterCreateController as vm'
 		})
+		.state('CharacterDetails', {
+			url: '/character/:id',
+			templateUrl: '/templates/character_details.html',
+			controller: 'CharacterDetailsController as vm'
+		})
 		$urlRouterProvider.otherwise('/');
 
 	}

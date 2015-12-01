@@ -5,6 +5,15 @@ let mongoose = require('mongoose');
 let Faction = mongoose.model('Faction');
 let Character = mongoose.model('Character');
 
+router.get('/:id', (req, res, next) => {
+  Character.findOne({ _id : req.params.id })
+  .exec((err, result) => {
+    if(err) return next(err);
+    if(!result) return next('Could not find the character you requested.');
+    res.send(result);
+  });
+});
+
 router.post('/', (req, res, next) => {
   let character = new Character(req.body);
   console.log(character);
