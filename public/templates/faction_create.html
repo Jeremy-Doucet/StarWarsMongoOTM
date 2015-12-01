@@ -1,0 +1,36 @@
+<md-content>
+  <md-card layout-padding>
+    <form>
+      <div layout layout-align="center">
+        <h1>Create New Faction</h1>
+      </div>
+      <md-input-container>
+        <label>Name</label>
+        <input type="text" ng-model="vm.faction.name" required />
+      </md-input-container>
+      <md-input-container>
+        <label>Logo Url</label>
+        <input type="text" ng-model="vm.faction.logoUrl" />
+      </md-input-container>
+      <md-input-container>
+        <label>Diplomacy</label>
+        <md-select ng-model="vm.faction.diplomacy">
+          <md-option value="Good">Good</md-option>
+          <md-option value="Neutral">Neutral</md-option>
+          <md-option value="Evil">Evil</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+        <label>Homeworld</label>
+        <input type="text" ng-model="vm.faction.homeworld" />
+      </md-input-container>
+      <md-input-container>
+        <label>Biography</label>
+        <textarea ng-model="vm.faction.biography"></textarea>
+      </md-input-container>
+      <div layout layout-align="center">
+        <md-button type="submit" class="md-raised md-warn">Submit</md-button>
+      </div>
+    </form>
+  </md-card>
+</md-content>
