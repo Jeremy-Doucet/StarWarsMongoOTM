@@ -1,0 +1,39 @@
+<md-content>
+  <md-card layout-padding>
+    <form ng-submit="vm.createCharacter();">
+      <div layout layout-align="center">
+        <h1>Create New character</h1>
+      </div>
+      <md-input-container>
+        <label>Name</label>
+        <input type="text" ng-model="vm.character.name" required />
+      </md-input-container>
+      <md-input-container>
+        <label>Race</label>
+        <input type="text" ng-model="vm.character.race" />
+      </md-input-container>
+      <md-input-container>
+        <label>Age</label>
+        <input type="number" ng-model="vm.character.age" />
+      </md-input-container>
+      <md-input-container>
+        <label>Is a Jedi?</label>
+        <md-select ng-model="vm.character.isJedi">
+          <md-option value="true">Yes</md-option>
+          <md-option value="false">No</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+        <label>Homeworld</label>
+        <input type="text" ng-model="vm.character.homeworld" />
+      </md-input-container>
+      <md-input-container>
+        <label>Biography</label>
+        <textarea ng-model="vm.character.biography"></textarea>
+      </md-input-container>
+      <div layout layout-align="center">
+        <md-button type="submit" class="md-raised md-warn">Submit</md-button>
+      </div>
+    </form>
+  </md-card>
+</md-content>
