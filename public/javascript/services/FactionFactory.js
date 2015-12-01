@@ -14,6 +14,14 @@
 			return q.promise;
 		};
 
+		o.getFactionById = function(id) {
+			var q = $q.defer();
+			$http.get('/api/v1/factions/' + id).then(function(res) {
+				q.resolve(res.data);
+			});
+			return q.promise;
+		};
+
 		o.createFaction = function(faction) {
 			var q = $q.defer();
 			$http.post('/api/v1/factions', faction).then(function(res) {
