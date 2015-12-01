@@ -15,6 +15,7 @@ router.get('/', (req, res, next) => {
 // GET /api/v1/factions/:id
 router.get('/:id', (req, res, next) => {
   Faction.findOne({ _id : req.params.id })
+  .populate('characters', 'name race homeworld')
   .exec((err, result) => {
     if(err) return next(err);
     if(!result) return next('Could not find the faction you requested.');

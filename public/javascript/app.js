@@ -12,15 +12,15 @@
 		//###############################
 		//# Faction States ##############
 		//###############################
-		.state('FactionDetails', {
-			url: '/faction/:id',
-			templateUrl: '/templates/faction_details.html',
-			controller: 'FactionDetailsController as vm'
-		})
 		.state('CreateFaction', {
 			url: '/faction/create',
 			templateUrl: '/templates/faction_create.html',
 			controller: 'FactionCreateController as vm'
+		})
+		.state('FactionDetails', {
+			url: '/faction/:id',
+			templateUrl: '/templates/faction_details.html',
+			controller: 'FactionDetailsController as vm'
 		})
 		//###############################
 		//# Character States ############

@@ -1,20 +1,35 @@
-<md-card>
-  <div>
+<md-card layout-padding>
+  <div layout-padding>
     <img ng-src="{{vm.faction.logoUrl}}" ng-alt="{{vm.faction.name}} logo image" style="margin: auto; height: 200px; width: 200px;" />
   </div>
-  <div layout layout-align="center">
+  <div layout-padding layout layout-align="center">
     <h1>{{vm.faction.name}}</h1>
   </div>
   <md-divider/>
-  <p>
+  <br/>
+  <p layout-padding>
     <i>Diplomacy: </i> {{vm.faction.diplomacy}}
     <br>
     <i>Homeworld: </i> {{vm.faction.homeworld}}
     <br>
     <i>Biography: </i> {{vm.faction.biography}}
     <br>
-    <i>Characters: </i> {{vm.faction.characters}}
   </p>
+  <md-divider/>
+  <div layout-padding layout = "column">
+    <br>
+    <i>Characters: </i>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="char in vm.faction.characters">
+        <div class="md-list-item-text" layout="column">
+          <h3 ui-sref="CharacterDetails({ id: char._id })">{{char.name}}</h3>
+          <p>{{char.race}}</p>
+          <p>{{char.homeworld}}</p>
+        </div>
+        <md-divider ng-show="!$last"/>
+      </md-list-item>
+    </md-list>
+  </div>
 </md-card>
 <md-toolbar layout>
   <md-button>Edit</md-button>
