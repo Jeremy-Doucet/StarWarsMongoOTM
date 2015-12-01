@@ -21,7 +21,15 @@
 			url: '/faction/create',
 			templateUrl: '/templates/faction_create.html',
 			controller: 'FactionCreateController as vm'
-		});
+		})
+		//###############################
+		//# Character States ############
+		//###############################
+		.state('CreateCharacter', {
+			url: '/character/create/:factionId',
+			templateUrl: '/templates/character_create.html',
+			controller: 'CharacterCreateController as vm'
+		})
 		$urlRouterProvider.otherwise('/');
 
 	}
