@@ -3,6 +3,7 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 let Faction = mongoose.model('Faction');
+let Character = mongoose.model('Character');
 
 // GET /api/v1/factions
 router.get('/', (req, res, next) => {
@@ -30,6 +31,16 @@ router.post('/', (req, res, next) => {
     if(err) return next(err);
     if(!result) return next('Could not create the faction.');
     res.send(result);
+  });
+});
+
+router.delete('/:id', (req, res, next) => {
+  Faction.remove({ _id: req.params.id}, (err, result) => {
+    if(err) return next(err);
+    Character.remove({ faction: req.params.id }, (err, char_result) => {
+      if(err) return next(err);
+      res.send(result);
+    });
   });
 });
 

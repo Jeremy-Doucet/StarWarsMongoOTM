@@ -8,5 +8,11 @@
       FactionFactory.getFactionById($stateParams.id).then(function(res) {
         vm.faction = res;
       });
+
+      vm.deleteFaction = function() {
+        FactionFactory.deleteFaction($stateParams.id).then(function(res) {
+          $state.go('Home');
+        });
+      };
   }
 })();

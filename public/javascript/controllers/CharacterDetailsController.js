@@ -7,5 +7,11 @@
       CharacterFactory.getCharacterById($stateParams.id).then(function(res) {
         vm.character = res;
       });
+
+      vm.deleteCharacter = function() {
+        CharacterFactory.deleteCharacter($stateParams.id).then(function() {
+          $state.go('FactionDetails', { id: vm.character.faction });
+        });
+      };
   }
 })();

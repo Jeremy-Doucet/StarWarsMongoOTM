@@ -35,6 +35,7 @@
 </md-card>
 <md-toolbar layout>
   <md-button>Edit</md-button>
+  <md-button class="md-raised md-warn" ng-click="vm.deleteFaction();">Delete</md-button>
   <span flex></span>
   <div layout layout-align="center">
     <md-button ui-sref="CreateCharacter({ factionId: vm.faction._id })">Create Character</md-button>

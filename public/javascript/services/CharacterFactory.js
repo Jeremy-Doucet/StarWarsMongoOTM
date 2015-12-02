@@ -20,6 +20,14 @@
       return q.promise;
     };
 
+    o.deleteCharacter = function(id) {
+      var q = $q.defer();
+      $http.delete('/api/v1/characters/' + id).then(function(res) {
+        q.resolve(res.data);
+      });
+      return q.promise;
+    };
+
     return o;
   }
 })();

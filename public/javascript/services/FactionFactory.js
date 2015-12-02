@@ -30,6 +30,14 @@
 			return q.promise;
 		};
 
+		o.deleteFaction = function(id) {
+			var q = $q.defer();
+			$http.delete('/api/v1/factions/' + id).then(function(res) {
+				q.resolve(res.data);
+			});
+			return q.promise;
+		};
+
 		return o;
 	}
 })();
